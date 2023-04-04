@@ -5,8 +5,9 @@
  
   }
   body{
-    background-color: rgba(30, 28, 28, 0.951);
-    color: white;
+    background-color: rgba(18, 16, 16, 0.974);
+    /* background-color: black; */
+    color: antiquewhite;
   }
   .navbar{
     text-align: center;
@@ -36,4 +37,7 @@
     width: 90%;
     margin-left: 67px;
     margin-right: 100px;
+  }
+  h2{
+    margin-bottom: 0.5rem;
   }
