@@ -8,13 +8,20 @@
     <title>NASA Picture of the day!</title>
 </head>
 <body onload="getCurrentImageOfTheDay()">
+    <div class = "navbar">
+        <h1>NASA PICTURE OF THE DAY</h1>
+    </div>
     <form action="" id="search-form">
-        <label for="search-input"></label>
-        <input type="date" name="search-input" id="search-input">
-
-        <label for="btn"></label>
-        <button type="button" name="btn" id="btn" onclick="getImageOfTheDay()">Search</>
-
+        <div class="form-container">
+            <!-- date input box -->
+            <label for="search-input"><span>Select a date</span></label>
+            <input type="date" name="search-input" id="search-input">
+            <!-- search button -->
+            <div id="search-btn">
+                <label for="btn"></label>
+                <button type="button" name="btn" id="btn" onclick="getImageOfTheDay()">Search</button>
+            </div>
+        </div>
         <!-- Displaying image for the date selected -->
         <div id="current-image-container">
             <div id="pictureDetail">

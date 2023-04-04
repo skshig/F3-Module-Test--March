@@ -3,6 +3,7 @@ let current_image = document.getElementById('current-picture')
 const APIKEY = '4QLNcg7cxMVpOfjkrrC0yl4NgUSk9kmlT7xeMISK';
 const apodUrl = 'https://api.nasa.gov/planetary/apod';
 let picture_detail = document.getElementById('pictureDetail');
+let searches = JSON.parse(localStorage.getItem("searches")) || [];
 
 function getCurrentImageOfTheDay(){
     const currentDate = new Date().toISOString().split("T")[0];
@@ -17,6 +18,7 @@ function getCurrentImageOfTheDay(){
 
             })
 }
+
  function getImageOfTheDay(){
     const selctedDate = document.getElementById('search-input').value;
     console.log("hi")
@@ -29,7 +31,14 @@ function getCurrentImageOfTheDay(){
             picture_detail.innerHTML = `<h2>${data.title}</h2><p>${data.explanation}</p>`;
             current_image.src = data.url;
 
+            saveSearch();
             })
+    
+}
+
+function saveSearch(date){
+    searches.push(date);
+    localStorage.setItem('searches',JSON.stringify(searches))
 }
 
 // document.getElementById('btn').addEventListener('click',getImageOfTheDay());
