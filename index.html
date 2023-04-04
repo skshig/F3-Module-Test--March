@@ -13,17 +13,23 @@
         <input type="date" name="search-input" id="search-input">
 
         <label for="btn"></label>
-        <input type="submit" name="btn" id="btn" value="Serach">
+        <button type="button" name="btn" id="btn" onclick="getImageOfTheDay()">Search</>
 
         <!-- Displaying image for the date selected -->
         <div id="current-image-container">
+            <div id="pictureDetail">
+
+            </div>
+            <img id="current-picture">
+                
+            </img>
 
         </div>
 
         <!-- History of the searched images -->
         <div>
             <ul id="search-history">
-                
+
             </ul>
         </div>
     </form>
