@@ -20,15 +20,13 @@ function getCurrentImageOfTheDay(){
         }).then((data)=>{
             picture_detail.innerHTML = `<h2>${data.title}</h2><p>${data.explanation}</p>`;
             current_image.src = data.url;
+
             })
-            .catch((error) => {
-                console.error(error);
-              });
 }
 
- function getImageOfTheDay(date){
-    // const selctedDate = document.getElementById('search-input').value;
-    fetch(`${apodUrl}?api_key=${APIKEY}&date=${searchInput}`)
+ function getImageOfTheDay(){
+    const selctedDate = document.getElementById('search-input').value;
+    fetch(`${apodUrl}?api_key=${APIKEY}&date=${selctedDate}`)
         .then((response)=>{
             console.log(response)
             return response.json()
@@ -37,7 +35,7 @@ function getCurrentImageOfTheDay(){
             picture_detail.innerHTML = `<h2>${data.title}</h2><p>${data.explanation}</p>`;
             current_image.src = data.url;
 
-            saveSearch();
+            saveSearch(date);
             addSearchToHistory();
             })
     
@@ -47,14 +45,13 @@ function saveSearch(date){
     searches.push(date);
     localStorage.setItem('searches',JSON.stringify(searches))
 }
-
 function addSearchToHistory() {
     search_history.innerHTML = "";
   
     for (let i = searches.length - 1; i >= 0; i--) {
       const searchItem = document.createElement("li");
       searchItem.innerText = searches[i];
-      searchItem.addEventListener("click", () => {
+      searchItem.addEventListener("submit", () => {
         getImageOfTheDay(searches[i]);
       });
       search_history.appendChild(searchItem);
@@ -68,4 +65,3 @@ function addSearchToHistory() {
   });
 
   addSearchToHistory();
-

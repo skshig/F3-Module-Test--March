@@ -9,7 +9,7 @@
 </head>
 <body onload="getCurrentImageOfTheDay()">
     <div class = "navbar">
-        <h1>NASA PICTURE OF THE DAY</h1>
+        <h1 >NASA PICTURE OF THE DAY</h1>
     </div>
     <form action="" id="search-form">
         <div class="form-container">
@@ -19,7 +19,7 @@
             <!-- search button -->
             <div id="search-btn">
                 <label for="btn"></label>
-                <button type="button" name="btn" id="btn" onclick="getImageOfTheDay()">Search</button>
+                <button type="submit" name="btn" id="btn">Search</button>
             </div>
         </div>
         <!-- Displaying image for the date selected -->
@@ -30,6 +30,8 @@
             <img id="current-picture">
                 
             </img>
+        </div>
+        <div id="search-history-container">
 
         </div>
 
@@ -40,6 +42,7 @@
             </ul>
         </div>
     </form>
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <script src="app.js"></script>
 </body>
 </html>
