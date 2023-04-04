@@ -24,9 +24,9 @@ function getCurrentImageOfTheDay(){
             })
 }
 
- function getImageOfTheDay(){
-    const selctedDate = document.getElementById('search-input').value;
-    fetch(`${apodUrl}?api_key=${APIKEY}&date=${selctedDate}`)
+ function getImageOfTheDay(date){
+    // const selctedDate = document.getElementById('search-input').value;
+    fetch(`${apodUrl}?api_key=${APIKEY}&date=${date}`)
         .then((response)=>{
             console.log(response)
             return response.json()
